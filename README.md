@@ -8,3 +8,6 @@ Here are few screenshots describing various stages of my app:
 
 3.
 ![image](https://user-images.githubusercontent.com/43849911/67399777-5d5bb180-f5ca-11e9-9e54-cc29ff1a36e7.png)
+
+4.
+![image](https://user-images.githubusercontent.com/43849911/67400366-2cc84780-f5cb-11e9-8935-814fbdcbadf6.png)
