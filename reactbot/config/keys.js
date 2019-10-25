@@ -1,5 +1,5 @@
 module.exports={
-  googleProjectID:'reactpageagent-boxkyj',
-  dialogFlowSessionID:'react-bot-session',
+  googleProjectID:'react##########',
+  dialogFlowSessionID:'react-########n',
   dialogFlowSessionLanguageCode:'en-us'
 }
