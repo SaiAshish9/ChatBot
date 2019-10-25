@@ -1,5 +1,6 @@
-module.exports={
-  googleProjectID:'react##########',
-  dialogFlowSessionID:'react-########n',
-  dialogFlowSessionLanguageCode:'en-us'
+if(process.env.NODE_ENV==='production'){
+  module.exports=require('./prod')
+}else{
+  module.exports=require('./dev')
+
 }

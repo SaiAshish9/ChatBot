@@ -1,11 +1,19 @@
 'use strict'
 
 
-const dialogFlow=require('dialogFlow')
 const config=require('../config/keys')
 const structjson=require("structjson")
+const dialogFlow=require('dialogflow')
 
-const sessionClient=new dialogFlow.SessionsClient()
+
+const projectID=config.googleProjectID;
+
+const credentials={
+  client_email:config.googleClientEmail,
+  private_key:config.googlePrivateKey
+}
+
+const sessionClient=new dialogFlow.SessionsClient({projectID:projectID,credentials:credentials})
 
 const sessionPath=sessionClient.sessionPath(config.googleProjectID,config.dialogFlowSessionID);
 
