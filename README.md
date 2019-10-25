@@ -18,3 +18,6 @@ Here are few screenshots describing various stages of my app:
 6.
 ![image](https://user-images.githubusercontent.com/43849911/67567995-a46fb100-f748-11e9-8c78-9919af6f686a.png)
 
+7.
+![image](https://user-images.githubusercontent.com/43849911/67570768-d3d5ec00-f74f-11e9-9629-186045ba387b.png)
+
