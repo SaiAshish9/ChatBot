@@ -26,3 +26,6 @@ Here are few screenshots describing various stages of my app:
 
 9.
 ![image](https://user-images.githubusercontent.com/43849911/67618762-3e9b2c00-f811-11e9-9ce3-bbd55722809f.png)
+
+10.
+![image](https://user-images.githubusercontent.com/43849911/67619908-e10ddc00-f81e-11e9-8bcf-40312cdf7e52.png)
