@@ -4,7 +4,7 @@
 const config=require('../config/keys')
 const structjson=require("structjson")
 const dialogFlow=require('dialogflow')
-
+const mongoose=require('mongoose')
 
 const projectID=config.googleProjectID;
 
@@ -15,11 +15,13 @@ const credentials={
 
 const sessionClient=new dialogFlow.SessionsClient({projectID:projectID,credentials:credentials})
 
-const sessionPath=sessionClient.sessionPath(config.googleProjectID,config.dialogFlowSessionID);
+const Registration=require('../models/Registration')
 
 
 module.exports={
-  textQuery:async function(text,parameters={}){
+  textQuery:async function(text,userID,parameters={}){
+    let sessionPath=sessionClient.sessionPath(config.googleProjectID,config.dialogFlowSessionID +userID);
+
     let self=module.exports
   const request = {
       session: sessionPath,
@@ -43,8 +45,10 @@ handleAction:function(responses){
   return responses;
 },
 
-eventQuery:async function(event,parameters={}){
+eventQuery:async function(event,userID,parameters={}){
   let self=module.exports
+  let sessionPath=sessionClient.sessionPath(config.googleProjectID,config.dialogFlowSessionID +userID);
+
 const request = {
     session: sessionPath,
     queryInput: {
@@ -59,7 +63,31 @@ const request = {
   responses=await self.handleAction(responses)
 return responses;},
 handleAction:function(responses){
+  let queryResult=responses[0].queryResult
+  switch(queryResult.action){
+    case 'recommendcourses-yes':
+    if (queryResult.allRequiredParamsPresent){
+
+    }
+    break;
+  }
 return responses;
+},
+saveRegistration: async function(fields){
+  const  registration=new Registration({
+    name:fields.name.stringValue,
+    address:fields.address.stringValue,
+    phone:fields.phone.stringValue,
+    email:fields.email.stringValue,
+    dateSent:Date.now()
+
+  })
+try{
+let reg=await  registration.save()
+console.log(reg);
+}catch(err){
+  console.log(err);
+}
 }
 
 
